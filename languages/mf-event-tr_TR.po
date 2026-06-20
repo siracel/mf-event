@@ -1,0 +1,270 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MF Event 1.4.0\n"
+"PO-Revision-Date: 2026-06-21 02:00+0000\n"
+"Last-Translator: MF <mfdsgn@gmail.com>\n"
+"Language-Team: MF\n"
+"Report-Msgid-Bugs-To: mfdsgn@gmail.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Domain: mf-event\n"
+
+msgid "Academic"
+msgstr "Akademik"
+
+msgid "Religious"
+msgstr "Dinî"
+
+msgid "National Holiday"
+msgstr "Resmî Tatil"
+
+msgid "Festival"
+msgstr "Festival"
+
+msgid "Break"
+msgstr "Ara Tatil"
+
+msgid "Other"
+msgstr "Diğer"
+
+msgid "MF Events"
+msgstr "MF Etkinlikler"
+
+msgid "Event"
+msgstr "Etkinlik"
+
+msgid "Add Event"
+msgstr "Etkinlik Ekle"
+
+msgid "Add New Event"
+msgstr "Yeni Etkinlik Ekle"
+
+msgid "Edit Event"
+msgstr "Etkinliği Düzenle"
+
+msgid "New Event"
+msgstr "Yeni Etkinlik"
+
+msgid "View Event"
+msgstr "Etkinliği Görüntüle"
+
+msgid "Search Events"
+msgstr "Etkinlik Ara"
+
+msgid "Event Date"
+msgstr "Etkinlik Tarihi"
+
+msgid "January"
+msgstr "Ocak"
+
+msgid "February"
+msgstr "Şubat"
+
+msgid "March"
+msgstr "Mart"
+
+msgid "April"
+msgstr "Nisan"
+
+msgid "May"
+msgstr "Mayıs"
+
+msgid "June"
+msgstr "Haziran"
+
+msgid "July"
+msgstr "Temmuz"
+
+msgid "August"
+msgstr "Ağustos"
+
+msgid "September"
+msgstr "Eylül"
+
+msgid "October"
+msgstr "Ekim"
+
+msgid "November"
+msgstr "Kasım"
+
+msgid "December"
+msgstr "Aralık"
+
+msgid "Start date"
+msgstr "Başlangıç tarihi"
+
+msgid "— Month —"
+msgstr "— Ay —"
+
+msgid "Day"
+msgstr "Gün"
+
+msgid "End date"
+msgstr "Bitiş tarihi"
+
+msgid "Only for multi-day events (e.g. a school break). Leave empty for single-day events."
+msgstr "Yalnızca birden çok gün süren etkinlikler içindir (ör. okul ara tatili). Tek günlük etkinliklerde boş bırakın."
+
+msgid "Year"
+msgstr "Yıl"
+
+msgid "<strong>Leave empty</strong> for dates that repeat the same day every year (most Gregorian dates).<br><strong>Set a year</strong> for dates that shift each year — Hijri / religious days like Ramadan, Eid, Mawlid. When that day passes it disappears automatically; add the next year's entry to keep it showing."
+msgstr "Her yıl aynı güne denk gelen tarihler için (çoğu Miladi tarih) <strong>boş bırakın</strong>.<br>Her yıl kayan tarihler için <strong>bir yıl girin</strong> — Ramazan, Bayram, Mevlid gibi Hicri / dinî günler. O gün geçtiğinde otomatik olarak kaybolur; göstermeye devam etmek için bir sonraki yılın kaydını ekleyin."
+
+msgid "e.g. 2027"
+msgstr "ör. 2027"
+
+msgid "Type"
+msgstr "Tür"
+
+msgid "Controls the colour accent of the card. Manage types under <em>MF Events → Settings</em>."
+msgstr "Kartın vurgu rengini belirler. Türleri <em>MF Etkinlikler → Ayarlar</em> altından yönetin."
+
+msgid "The event name is the post title above. Order is handled automatically by date."
+msgstr "Etkinlik adı yukarıdaki yazı başlığıdır. Sıralama tarihe göre otomatik yapılır."
+
+msgid "Date"
+msgstr "Tarih"
+
+msgid "(yearly)"
+msgstr "(her yıl)"
+
+msgid "MF Event Settings"
+msgstr "MF Event Ayarları"
+
+msgid "Settings"
+msgstr "Ayarlar"
+
+msgid "MF Event — Settings"
+msgstr "MF Event — Ayarlar"
+
+msgid "Settings saved."
+msgstr "Ayarlar kaydedildi."
+
+msgid "Shortcode"
+msgstr "Kısa kod"
+
+msgid "Place this shortcode in any page, post, or page-builder text/HTML element:"
+msgstr "Bu kısa kodu herhangi bir sayfaya, yazıya veya sayfa oluşturucu metin/HTML öğesine yerleştirin:"
+
+msgid "(the alias %s works too)"
+msgstr "(%s takma adı da çalışır)"
+
+msgid "Parameters"
+msgstr "Parametreler"
+
+msgid "Parameter"
+msgstr "Parametre"
+
+msgid "Default"
+msgstr "Varsayılan"
+
+msgid "What it does"
+msgstr "Ne işe yarar"
+
+msgid "Example"
+msgstr "Örnek"
+
+msgid "How many months ahead to show. Events further in the future than this are hidden (this is also what keeps next year’s religious dates from appearing too early)."
+msgstr "Kaç ay ilerisinin gösterileceği. Bundan daha ileri tarihli etkinlikler gizlenir (bu, gelecek yılın dinî günlerinin çok erken görünmesini de engeller)."
+
+msgid "Maximum number of upcoming items to list. <code>0</code> means no limit."
+msgstr "Listelenecek en fazla yaklaşan öğe sayısı. <code>0</code> sınır yok demektir."
+
+msgid "Show the highlighted “Today” boxes at the top for events happening today. Set to <code>no</code> to hide that section."
+msgstr "Bugün gerçekleşen etkinlikler için üstte vurgulanan “Bugün” kutularını gösterir. Bu bölümü gizlemek için <code>no</code> yapın."
+
+msgid "(empty)"
+msgstr "(boş)"
+
+msgid "Optional heading shown above the list."
+msgstr "Listenin üzerinde gösterilen isteğe bağlı başlık."
+
+msgid "(all)"
+msgstr "(tümü)"
+
+msgid "Show only one type, using its <em>slug</em> (see the Types table below). Leave empty to show all."
+msgstr "Yalnızca tek bir türü, <em>slug</em>’ını kullanarak gösterir (aşağıdaki Türler tablosuna bakın). Tümünü göstermek için boş bırakın."
+
+msgid "You can combine parameters, e.g. <code>[mf_event title=\"This Year\" months=\"12\" limit=\"10\"]</code>."
+msgstr "Parametreleri birleştirebilirsiniz, ör. <code>[mf_event title=\"This Year\" months=\"12\" limit=\"10\"]</code>."
+
+msgid "How dates work"
+msgstr "Tarihler nasıl çalışır"
+
+msgid "<strong>No year</strong> on an event → it repeats the same day every year (use for fixed Gregorian dates and school events)."
+msgstr "Bir etkinlikte <strong>yıl yok</strong> → her yıl aynı gün tekrarlanır (sabit Miladi tarihler ve okul etkinlikleri için kullanın)."
+
+msgid "<strong>A year set</strong> on an event → a one-off date for that specific year (use for Hijri / religious days that shift). When the day passes it drops off automatically; add next year’s entry to keep it visible."
+msgstr "Bir etkinlikte <strong>yıl belirtildi</strong> → o yıla özel tek seferlik tarih (kayan Hicri / dinî günler için kullanın). Gün geçtiğinde otomatik olarak kaybolur; görünür kalması için sonraki yılın kaydını ekleyin."
+
+msgid "The list is ordered relative to <strong>today</strong>. Items happening today appear at the top in their own boxes. Make sure your <em>Settings → General → Timezone</em> in WordPress is correct, since “today” uses the site timezone."
+msgstr "Liste <strong>bugüne</strong> göre sıralanır. Bugün gerçekleşen öğeler kendi kutularında en üstte görünür. “Bugün” site saat dilimini kullandığından, WordPress’teki <em>Ayarlar → Genel → Saat Dilimi</em> ayarınızın doğru olduğundan emin olun."
+
+msgid "Multi-day events use the optional <strong>End date</strong> (year-spanning ranges like Dec 25 – Jan 3 are supported)."
+msgstr "Birden çok gün süren etkinlikler isteğe bağlı <strong>Bitiş tarihi</strong>ni kullanır (25 Ara – 3 Oca gibi yılı aşan aralıklar desteklenir)."
+
+msgid "Event Types"
+msgstr "Etkinlik Türleri"
+
+msgid "Each type has a colour used as the card’s accent. Add your own, rename them, or change colours. The <strong>slug</strong> is the value used in the <code>type=\"…\"</code> shortcode parameter; it’s generated automatically from the name for new types and can’t be edited afterwards (so existing events keep working)."
+msgstr "Her türün, kartın vurgusu olarak kullanılan bir rengi vardır. Kendinizinkini ekleyin, yeniden adlandırın veya renkleri değiştirin. <strong>Slug</strong>, <code>type=\"…\"</code> kısa kod parametresinde kullanılan değerdir; yeni türler için addan otomatik üretilir ve sonradan düzenlenemez (böylece mevcut etkinlikler çalışmaya devam eder)."
+
+msgid "Name"
+msgstr "Ad"
+
+msgid "Slug"
+msgstr "Slug"
+
+msgid "Colour"
+msgstr "Renk"
+
+msgid "Delete"
+msgstr "Sil"
+
+msgid "+ Add type"
+msgstr "+ Tür ekle"
+
+msgid "Save settings"
+msgstr "Ayarları kaydet"
+
+msgid "Reset all types to the defaults? Custom types will be removed."
+msgstr "Tüm türler varsayılanlara sıfırlansın mı? Özel türler kaldırılacaktır."
+
+msgid "Reset to defaults"
+msgstr "Varsayılanlara sıfırla"
+
+msgid "e.g. Exam"
+msgstr "ör. Sınav"
+
+msgid "auto from name"
+msgstr "addan otomatik"
+
+msgid "Today"
+msgstr "Bugün"
+
+msgid "No upcoming events."
+msgstr "Yaklaşan etkinlik yok."
+
+msgid "No events yet."
+msgstr "Henüz etkinlik yok."
+
+msgid "Load sample events"
+msgstr "Örnek etkinlikleri yükle"
+
+msgid "to start from a ready-made academic-calendar set you can edit, or add your own."
+msgstr "düzenleyebileceğiniz hazır bir akademik takvim setiyle başlamak için ya da kendinizinkini ekleyin."
+
+msgid "Found %s event from the previous isabet-events plugin."
+msgid_plural "Found %s events from the previous isabet-events plugin."
+msgstr[0] "Önceki isabet-events eklentisinden %s etkinlik bulundu."
+msgstr[1] "Önceki isabet-events eklentisinden %s etkinlik bulundu."
+
+msgid "Import them into MF Event"
+msgstr "Bunları MF Event’e aktar"
+
+msgid "— copies titles, dates and types. Runs once; no duplicates."
+msgstr "— başlıkları, tarihleri ve türleri kopyalar. Bir kez çalışır; yinelenmez."

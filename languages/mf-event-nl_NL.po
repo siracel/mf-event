@@ -1,0 +1,270 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MF Event 1.4.0\n"
+"PO-Revision-Date: 2026-06-21 02:00+0000\n"
+"Last-Translator: MF <mfdsgn@gmail.com>\n"
+"Language-Team: MF\n"
+"Report-Msgid-Bugs-To: mfdsgn@gmail.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: mf-event\n"
+
+msgid "Academic"
+msgstr "Academisch"
+
+msgid "Religious"
+msgstr "Religieus"
+
+msgid "National Holiday"
+msgstr "Nationale feestdag"
+
+msgid "Festival"
+msgstr "Festival"
+
+msgid "Break"
+msgstr "Vakantie"
+
+msgid "Other"
+msgstr "Overig"
+
+msgid "MF Events"
+msgstr "MF Evenementen"
+
+msgid "Event"
+msgstr "Evenement"
+
+msgid "Add Event"
+msgstr "Evenement toevoegen"
+
+msgid "Add New Event"
+msgstr "Nieuw evenement toevoegen"
+
+msgid "Edit Event"
+msgstr "Evenement bewerken"
+
+msgid "New Event"
+msgstr "Nieuw evenement"
+
+msgid "View Event"
+msgstr "Evenement bekijken"
+
+msgid "Search Events"
+msgstr "Evenementen zoeken"
+
+msgid "Event Date"
+msgstr "Evenementdatum"
+
+msgid "January"
+msgstr "Januari"
+
+msgid "February"
+msgstr "Februari"
+
+msgid "March"
+msgstr "Maart"
+
+msgid "April"
+msgstr "April"
+
+msgid "May"
+msgstr "Mei"
+
+msgid "June"
+msgstr "Juni"
+
+msgid "July"
+msgstr "Juli"
+
+msgid "August"
+msgstr "Augustus"
+
+msgid "September"
+msgstr "September"
+
+msgid "October"
+msgstr "Oktober"
+
+msgid "November"
+msgstr "November"
+
+msgid "December"
+msgstr "December"
+
+msgid "Start date"
+msgstr "Startdatum"
+
+msgid "— Month —"
+msgstr "— Maand —"
+
+msgid "Day"
+msgstr "Dag"
+
+msgid "End date"
+msgstr "Einddatum"
+
+msgid "Only for multi-day events (e.g. a school break). Leave empty for single-day events."
+msgstr "Alleen voor meerdaagse evenementen (bijv. een schoolvakantie). Laat leeg voor eendaagse evenementen."
+
+msgid "Year"
+msgstr "Jaar"
+
+msgid "<strong>Leave empty</strong> for dates that repeat the same day every year (most Gregorian dates).<br><strong>Set a year</strong> for dates that shift each year — Hijri / religious days like Ramadan, Eid, Mawlid. When that day passes it disappears automatically; add the next year's entry to keep it showing."
+msgstr "<strong>Laat leeg</strong> voor datums die elk jaar op dezelfde dag vallen (de meeste Gregoriaanse datums).<br><strong>Stel een jaar in</strong> voor datums die elk jaar verschuiven — Hijri / religieuze dagen zoals Ramadan, Eid, Mawlid. Zodra die dag voorbij is, verdwijnt hij automatisch; voeg het item van volgend jaar toe om het zichtbaar te houden."
+
+msgid "e.g. 2027"
+msgstr "bijv. 2027"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Controls the colour accent of the card. Manage types under <em>MF Events → Settings</em>."
+msgstr "Bepaalt de accentkleur van de kaart. Beheer types onder <em>MF Evenementen → Instellingen</em>."
+
+msgid "The event name is the post title above. Order is handled automatically by date."
+msgstr "De naam van het evenement is de berichttitel hierboven. De volgorde wordt automatisch op datum bepaald."
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "(yearly)"
+msgstr "(jaarlijks)"
+
+msgid "MF Event Settings"
+msgstr "MF Event-instellingen"
+
+msgid "Settings"
+msgstr "Instellingen"
+
+msgid "MF Event — Settings"
+msgstr "MF Event — Instellingen"
+
+msgid "Settings saved."
+msgstr "Instellingen opgeslagen."
+
+msgid "Shortcode"
+msgstr "Shortcode"
+
+msgid "Place this shortcode in any page, post, or page-builder text/HTML element:"
+msgstr "Plaats deze shortcode op een pagina, bericht of tekst/HTML-element van een paginabouwer:"
+
+msgid "(the alias %s works too)"
+msgstr "(de alias %s werkt ook)"
+
+msgid "Parameters"
+msgstr "Parameters"
+
+msgid "Parameter"
+msgstr "Parameter"
+
+msgid "Default"
+msgstr "Standaard"
+
+msgid "What it does"
+msgstr "Wat het doet"
+
+msgid "Example"
+msgstr "Voorbeeld"
+
+msgid "How many months ahead to show. Events further in the future than this are hidden (this is also what keeps next year’s religious dates from appearing too early)."
+msgstr "Hoeveel maanden vooruit getoond worden. Evenementen verder in de toekomst worden verborgen (dit voorkomt ook dat religieuze datums van volgend jaar te vroeg verschijnen)."
+
+msgid "Maximum number of upcoming items to list. <code>0</code> means no limit."
+msgstr "Maximaal aantal komende items in de lijst. <code>0</code> betekent geen limiet."
+
+msgid "Show the highlighted “Today” boxes at the top for events happening today. Set to <code>no</code> to hide that section."
+msgstr "Toont de gemarkeerde “Vandaag”-vakken bovenaan voor evenementen die vandaag plaatsvinden. Zet op <code>no</code> om dat gedeelte te verbergen."
+
+msgid "(empty)"
+msgstr "(leeg)"
+
+msgid "Optional heading shown above the list."
+msgstr "Optionele kop die boven de lijst wordt getoond."
+
+msgid "(all)"
+msgstr "(alle)"
+
+msgid "Show only one type, using its <em>slug</em> (see the Types table below). Leave empty to show all."
+msgstr "Toont slechts één type, met behulp van de <em>slug</em> (zie de Types-tabel hieronder). Laat leeg om alle te tonen."
+
+msgid "You can combine parameters, e.g. <code>[mf_event title=\"This Year\" months=\"12\" limit=\"10\"]</code>."
+msgstr "Je kunt parameters combineren, bijv. <code>[mf_event title=\"This Year\" months=\"12\" limit=\"10\"]</code>."
+
+msgid "How dates work"
+msgstr "Hoe datums werken"
+
+msgid "<strong>No year</strong> on an event → it repeats the same day every year (use for fixed Gregorian dates and school events)."
+msgstr "<strong>Geen jaar</strong> bij een evenement → het herhaalt elk jaar op dezelfde dag (gebruik voor vaste Gregoriaanse datums en schoolevenementen)."
+
+msgid "<strong>A year set</strong> on an event → a one-off date for that specific year (use for Hijri / religious days that shift). When the day passes it drops off automatically; add next year’s entry to keep it visible."
+msgstr "<strong>Een jaar ingesteld</strong> bij een evenement → een eenmalige datum voor dat specifieke jaar (gebruik voor verschuivende Hijri / religieuze dagen). Zodra de dag voorbij is, verdwijnt hij automatisch; voeg het item van volgend jaar toe om het zichtbaar te houden."
+
+msgid "The list is ordered relative to <strong>today</strong>. Items happening today appear at the top in their own boxes. Make sure your <em>Settings → General → Timezone</em> in WordPress is correct, since “today” uses the site timezone."
+msgstr "De lijst is geordend ten opzichte van <strong>vandaag</strong>. Items van vandaag verschijnen bovenaan in hun eigen vakken. Zorg dat <em>Instellingen → Algemeen → Tijdzone</em> in WordPress correct is, want “vandaag” gebruikt de tijdzone van de site."
+
+msgid "Multi-day events use the optional <strong>End date</strong> (year-spanning ranges like Dec 25 – Jan 3 are supported)."
+msgstr "Meerdaagse evenementen gebruiken de optionele <strong>Einddatum</strong> (bereiken over jaargrenzen zoals 25 dec – 3 jan worden ondersteund)."
+
+msgid "Event Types"
+msgstr "Evenementtypes"
+
+msgid "Each type has a colour used as the card’s accent. Add your own, rename them, or change colours. The <strong>slug</strong> is the value used in the <code>type=\"…\"</code> shortcode parameter; it’s generated automatically from the name for new types and can’t be edited afterwards (so existing events keep working)."
+msgstr "Elk type heeft een kleur die als accent van de kaart wordt gebruikt. Voeg eigen types toe, hernoem ze of wijzig kleuren. De <strong>slug</strong> is de waarde die wordt gebruikt in de shortcode-parameter <code>type=\"…\"</code>; deze wordt voor nieuwe types automatisch uit de naam gegenereerd en kan daarna niet meer worden bewerkt (zodat bestaande evenementen blijven werken)."
+
+msgid "Name"
+msgstr "Naam"
+
+msgid "Slug"
+msgstr "Slug"
+
+msgid "Colour"
+msgstr "Kleur"
+
+msgid "Delete"
+msgstr "Verwijderen"
+
+msgid "+ Add type"
+msgstr "+ Type toevoegen"
+
+msgid "Save settings"
+msgstr "Instellingen opslaan"
+
+msgid "Reset all types to the defaults? Custom types will be removed."
+msgstr "Alle types terugzetten naar standaard? Aangepaste types worden verwijderd."
+
+msgid "Reset to defaults"
+msgstr "Terugzetten naar standaard"
+
+msgid "e.g. Exam"
+msgstr "bijv. Examen"
+
+msgid "auto from name"
+msgstr "automatisch uit naam"
+
+msgid "Today"
+msgstr "Vandaag"
+
+msgid "No upcoming events."
+msgstr "Geen komende evenementen."
+
+msgid "No events yet."
+msgstr "Nog geen evenementen."
+
+msgid "Load sample events"
+msgstr "Voorbeeldevenementen laden"
+
+msgid "to start from a ready-made academic-calendar set you can edit, or add your own."
+msgstr "om te beginnen met een kant-en-klare academische kalender die je kunt bewerken, of voeg je eigen toe."
+
+msgid "Found %s event from the previous isabet-events plugin."
+msgid_plural "Found %s events from the previous isabet-events plugin."
+msgstr[0] "%s evenement gevonden van de vorige isabet-events-plugin."
+msgstr[1] "%s evenementen gevonden van de vorige isabet-events-plugin."
+
+msgid "Import them into MF Event"
+msgstr "Importeer ze in MF Event"
+
+msgid "— copies titles, dates and types. Runs once; no duplicates."
+msgstr "— kopieert titels, datums en types. Wordt één keer uitgevoerd; geen duplicaten."

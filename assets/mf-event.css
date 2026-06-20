@@ -1,0 +1,168 @@
+/* MF Event
+   Theme-friendly: typography is inherited from the active theme (font-family: inherit).
+   Colours adapt to the surrounding text colour via currentColor, with safe fallbacks. */
+
+.mf-event {
+	font-family: inherit;
+	color: inherit;
+	line-height: 1.4;
+
+	/* Fallbacks first, then modern color-mix overrides for browsers that support it. */
+	--mfe-border: rgba(0, 0, 0, .12);
+	--mfe-surface: rgba(0, 0, 0, .025);
+	--mfe-muted: rgba(0, 0, 0, .55);
+	--mfe-accent: #2b6cb0;
+}
+
+@supports (color: color-mix(in srgb, red 50%, white)) {
+	.mf-event {
+		--mfe-border: color-mix(in srgb, currentColor 14%, transparent);
+		--mfe-surface: color-mix(in srgb, currentColor 4%, transparent);
+		--mfe-muted: color-mix(in srgb, currentColor 58%, transparent);
+	}
+}
+
+.mf-event * { box-sizing: border-box; }
+
+.mf-event .mfe-heading {
+	font-family: inherit;
+	font-size: 1.5em;
+	margin: 0 0 .75em;
+}
+
+/* ---- Today highlight ------------------------------------------------ */
+.mf-event .mfe-today { margin: 0 0 1.5em; }
+
+.mf-event .mfe-today__label {
+	display: inline-block;
+	font-size: .72em;
+	font-weight: 700;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+	color: var(--mfe-muted);
+	margin: 0 0 .55em;
+}
+
+.mf-event .mfe-today-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: .75em;
+}
+
+/* ---- Card ----------------------------------------------------------- */
+.mf-event .mfe-list {
+	display: flex;
+	flex-direction: column;
+	gap: .6em;
+}
+
+.mf-event .mfe-card {
+	position: relative;
+	display: flex;
+	align-items: stretch;
+	gap: 1em;
+	padding: .85em 1.1em .85em 1.25em;
+	border: 1px solid var(--mfe-border);
+	border-radius: 14px;
+	background: var(--mfe-surface);
+	overflow: hidden;
+	transition: border-color .15s ease, transform .15s ease;
+}
+
+.mf-event .mfe-card:hover {
+	border-color: var(--mfe-accent);
+	transform: translateY(-1px);
+}
+
+/* Left accent stripe, colour-coded by type */
+.mf-event .mfe-card::before {
+	content: "";
+	position: absolute;
+	left: 0; top: 0; bottom: 0;
+	width: 4px;
+	background: var(--mfe-accent);
+}
+
+.mf-event .mfe-card--today {
+	border-color: var(--mfe-accent);
+	box-shadow: 0 0 0 2px var(--mfe-accent) inset;
+	background: transparent;
+}
+
+/* Date block */
+.mf-event .mfe-date {
+	flex: 0 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-width: 56px;
+	line-height: 1.05;
+	text-align: center;
+}
+
+.mf-event .mfe-day {
+	font-size: 1.95em;
+	font-weight: 700;
+}
+
+.mf-event .mfe-mon {
+	font-size: .72em;
+	font-weight: 600;
+	letter-spacing: .06em;
+	text-transform: uppercase;
+	color: var(--mfe-accent);
+}
+
+.mf-event .mfe-year {
+	font-size: .72em;
+	color: var(--mfe-muted);
+}
+
+/* Body */
+.mf-event .mfe-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: .25em;
+	min-width: 0;
+}
+
+.mf-event .mfe-title {
+	font-family: inherit;
+	font-size: 1.04em;
+	font-weight: 600;
+	margin: 0;
+	line-height: 1.25;
+}
+
+.mf-event .mfe-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: .5em;
+	font-size: .82em;
+	color: var(--mfe-muted);
+}
+
+.mf-event .mfe-badge {
+	font-size: .72em;
+	font-weight: 700;
+	letter-spacing: .04em;
+	text-transform: uppercase;
+	color: #fff;
+	background: var(--mfe-accent);
+	padding: .1em .55em;
+	border-radius: 999px;
+}
+
+.mf-event .mfe-empty {
+	color: var(--mfe-muted);
+	font-style: italic;
+}
+
+/* ---- Small screens -------------------------------------------------- */
+@media (max-width: 480px) {
+	.mf-event .mfe-today-grid { grid-template-columns: 1fr; }
+	.mf-event .mfe-day { font-size: 1.7em; }
+}

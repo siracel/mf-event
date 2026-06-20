@@ -1,0 +1,363 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR MF
+# This file is distributed under the same license as the MF Event package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MF Event 1.4.0\n"
+"Report-Msgid-Bugs-To: mfdsgn@gmail.com\n"
+"POT-Creation-Date: 2026-06-21 01:59+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: mf-event.php:40
+msgid "Academic"
+msgstr ""
+
+#: mf-event.php:41
+msgid "Religious"
+msgstr ""
+
+#: mf-event.php:42
+msgid "National Holiday"
+msgstr ""
+
+#: mf-event.php:43
+msgid "Festival"
+msgstr ""
+
+#: mf-event.php:44
+msgid "Break"
+msgstr ""
+
+#: mf-event.php:45
+msgid "Other"
+msgstr ""
+
+#: mf-event.php:90 mf-event.php:98
+msgid "MF Events"
+msgstr ""
+
+#: mf-event.php:91
+msgid "Event"
+msgstr ""
+
+#: mf-event.php:92
+msgid "Add Event"
+msgstr ""
+
+#: mf-event.php:93
+msgid "Add New Event"
+msgstr ""
+
+#: mf-event.php:94
+msgid "Edit Event"
+msgstr ""
+
+#: mf-event.php:95
+msgid "New Event"
+msgstr ""
+
+#: mf-event.php:96
+msgid "View Event"
+msgstr ""
+
+#: mf-event.php:97
+msgid "Search Events"
+msgstr ""
+
+#: mf-event.php:118
+msgid "Event Date"
+msgstr ""
+
+#: mf-event.php:123
+msgid "January"
+msgstr ""
+
+#: mf-event.php:124
+msgid "February"
+msgstr ""
+
+#: mf-event.php:125
+msgid "March"
+msgstr ""
+
+#: mf-event.php:126
+msgid "April"
+msgstr ""
+
+#: mf-event.php:127
+msgid "May"
+msgstr ""
+
+#: mf-event.php:128
+msgid "June"
+msgstr ""
+
+#: mf-event.php:129
+msgid "July"
+msgstr ""
+
+#: mf-event.php:130
+msgid "August"
+msgstr ""
+
+#: mf-event.php:131
+msgid "September"
+msgstr ""
+
+#: mf-event.php:132
+msgid "October"
+msgstr ""
+
+#: mf-event.php:133
+msgid "November"
+msgstr ""
+
+#: mf-event.php:134
+msgid "December"
+msgstr ""
+
+#: mf-event.php:158
+msgid "Start date"
+msgstr ""
+
+#: mf-event.php:161 mf-event.php:173
+msgid "— Month —"
+msgstr ""
+
+#: mf-event.php:166 mf-event.php:178
+msgid "Day"
+msgstr ""
+
+#: mf-event.php:170
+msgid "End date"
+msgstr ""
+
+#: mf-event.php:170
+msgid "Only for multi-day events (e.g. a school break). Leave empty for single-day events."
+msgstr ""
+
+#: mf-event.php:182
+msgid "Year"
+msgstr ""
+
+#: mf-event.php:182
+msgid "<strong>Leave empty</strong> for dates that repeat the same day every year (most Gregorian dates).<br><strong>Set a year</strong> for dates that shift each year — Hijri / religious days like Ramadan, Eid, Mawlid. When that day passes it disappears automatically; add the next year's entry to keep it showing."
+msgstr ""
+
+#: mf-event.php:183
+msgid "e.g. 2027"
+msgstr ""
+
+#: mf-event.php:186 mf-event.php:242
+msgid "Type"
+msgstr ""
+
+#: mf-event.php:186
+msgid "Controls the colour accent of the card. Manage types under <em>MF Events → Settings</em>."
+msgstr ""
+
+#: mf-event.php:196
+msgid "The event name is the post title above. Order is handled automatically by date."
+msgstr ""
+
+#: mf-event.php:241
+msgid "Date"
+msgstr ""
+
+#: mf-event.php:265
+msgid "(yearly)"
+msgstr ""
+
+#: mf-event.php:293
+msgid "MF Event Settings"
+msgstr ""
+
+#: mf-event.php:294
+msgid "Settings"
+msgstr ""
+
+#: mf-event.php:358
+msgid "MF Event — Settings"
+msgstr ""
+
+#: mf-event.php:360
+msgid "Settings saved."
+msgstr ""
+
+#: mf-event.php:363
+msgid "Shortcode"
+msgstr ""
+
+#: mf-event.php:364
+msgid "Place this shortcode in any page, post, or page-builder text/HTML element:"
+msgstr ""
+
+#: mf-event.php:367
+#, php-format
+msgid "(the alias %s works too)"
+msgstr ""
+
+#: mf-event.php:370
+msgid "Parameters"
+msgstr ""
+
+#: mf-event.php:373
+msgid "Parameter"
+msgstr ""
+
+#: mf-event.php:374
+msgid "Default"
+msgstr ""
+
+#: mf-event.php:375
+msgid "What it does"
+msgstr ""
+
+#: mf-event.php:376
+msgid "Example"
+msgstr ""
+
+#: mf-event.php:379
+msgid "How many months ahead to show. Events further in the future than this are hidden (this is also what keeps next year’s religious dates from appearing too early)."
+msgstr ""
+
+#: mf-event.php:380
+msgid "Maximum number of upcoming items to list. <code>0</code> means no limit."
+msgstr ""
+
+#: mf-event.php:381
+msgid "Show the highlighted “Today” boxes at the top for events happening today. Set to <code>no</code> to hide that section."
+msgstr ""
+
+#: mf-event.php:382
+msgid "(empty)"
+msgstr ""
+
+#: mf-event.php:382
+msgid "Optional heading shown above the list."
+msgstr ""
+
+#: mf-event.php:383
+msgid "(all)"
+msgstr ""
+
+#: mf-event.php:383
+msgid "Show only one type, using its <em>slug</em> (see the Types table below). Leave empty to show all."
+msgstr ""
+
+#: mf-event.php:386
+msgid "You can combine parameters, e.g. <code>[mf_event title=\"This Year\" months=\"12\" limit=\"10\"]</code>."
+msgstr ""
+
+#: mf-event.php:388
+msgid "How dates work"
+msgstr ""
+
+#: mf-event.php:390
+msgid "<strong>No year</strong> on an event → it repeats the same day every year (use for fixed Gregorian dates and school events)."
+msgstr ""
+
+#: mf-event.php:391
+msgid "<strong>A year set</strong> on an event → a one-off date for that specific year (use for Hijri / religious days that shift). When the day passes it drops off automatically; add next year’s entry to keep it visible."
+msgstr ""
+
+#: mf-event.php:392
+msgid "The list is ordered relative to <strong>today</strong>. Items happening today appear at the top in their own boxes. Make sure your <em>Settings → General → Timezone</em> in WordPress is correct, since “today” uses the site timezone."
+msgstr ""
+
+#: mf-event.php:393
+msgid "Multi-day events use the optional <strong>End date</strong> (year-spanning ranges like Dec 25 – Jan 3 are supported)."
+msgstr ""
+
+#: mf-event.php:398
+msgid "Event Types"
+msgstr ""
+
+#: mf-event.php:399
+msgid "Each type has a colour used as the card’s accent. Add your own, rename them, or change colours. The <strong>slug</strong> is the value used in the <code>type=\"…\"</code> shortcode parameter; it’s generated automatically from the name for new types and can’t be edited afterwards (so existing events keep working)."
+msgstr ""
+
+#: mf-event.php:405
+msgid "Name"
+msgstr ""
+
+#: mf-event.php:406
+msgid "Slug"
+msgstr ""
+
+#: mf-event.php:407
+msgid "Colour"
+msgstr ""
+
+#: mf-event.php:408
+msgid "Delete"
+msgstr ""
+
+#: mf-event.php:422
+msgid "+ Add type"
+msgstr ""
+
+#: mf-event.php:425
+msgid "Save settings"
+msgstr ""
+
+#: mf-event.php:427
+msgid "Reset all types to the defaults? Custom types will be removed."
+msgstr ""
+
+#: mf-event.php:427
+msgid "Reset to defaults"
+msgstr ""
+
+#: mf-event.php:437
+msgid "e.g. Exam"
+msgstr ""
+
+#: mf-event.php:438
+msgid "auto from name"
+msgstr ""
+
+#: mf-event.php:638 mf-event.php:691
+msgid "Today"
+msgstr ""
+
+#: mf-event.php:653
+msgid "No upcoming events."
+msgstr ""
+
+#: mf-event.php:717
+msgid "No events yet."
+msgstr ""
+
+#: mf-event.php:719
+msgid "Load sample events"
+msgstr ""
+
+#: mf-event.php:720
+msgid "to start from a ready-made academic-calendar set you can edit, or add your own."
+msgstr ""
+
+#: mf-event.php:819
+#, php-format
+msgid "Found %s event from the previous isabet-events plugin."
+msgid_plural "Found %s events from the previous isabet-events plugin."
+msgstr[0] ""
+msgstr[1] ""
+
+#: mf-event.php:823
+msgid "Import them into MF Event"
+msgstr ""
+
+#: mf-event.php:824
+msgid "— copies titles, dates and types. Runs once; no duplicates."
+msgstr ""
