@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       MF Event
  * Description:       Agenda-style upcoming-events list via the [mf_event] shortcode. Recurring (annual) dates and year-specific dates (e.g. Hijri / religious days) you update each year. Inherits the active theme's typography. Custom event types with colours. Reusable on any site.
- * Version:           1.4.0
+ * Version:           1.4.1
  * Author:            MF
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -27,7 +27,7 @@ class MF_Event {
 	const CPT     = 'mf_event';
 	const PREFIX  = '_mfe_';
 	const OPT     = 'mfe_types';
-	const VERSION = '1.4.0';
+	const VERSION = '1.4.1';
 	const TD       = 'mf-event';
 
 	// For importing data from the original "isabet-events" plugin.
@@ -469,9 +469,33 @@ class MF_Event {
 			if ( ! $color ) {
 				continue;
 			}
-			$css .= sprintf( '.mf-event .mfe-card[data-type="%s"]{--mfe-accent:%s;}', esc_attr( $slug ), $color );
+			// Pick a readable text colour for badges painted on the accent.
+			$contrast = $this->contrast_color( $color );
+			$css     .= sprintf(
+				'.mf-event .mfe-card[data-type="%s"]{--mfe-accent:%s;--mfe-accent-contrast:%s;}',
+				esc_attr( $slug ),
+				$color,
+				$contrast
+			);
 		}
 		return $css;
+	}
+
+	/** Return #fff or a dark ink depending on the luminance of a hex colour. */
+	private function contrast_color( $hex ) {
+		$hex = ltrim( (string) $hex, '#' );
+		if ( 3 === strlen( $hex ) ) {
+			$hex = $hex[0] . $hex[0] . $hex[1] . $hex[1] . $hex[2] . $hex[2];
+		}
+		if ( 6 !== strlen( $hex ) ) {
+			return '#ffffff';
+		}
+		$r = hexdec( substr( $hex, 0, 2 ) ) / 255;
+		$g = hexdec( substr( $hex, 2, 2 ) ) / 255;
+		$b = hexdec( substr( $hex, 4, 2 ) ) / 255;
+		// Perceived luminance (sRGB luma approximation).
+		$lum = 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
+		return ( $lum > 0.6 ) ? '#1a202c' : '#ffffff';
 	}
 
 	/* ---------------------------------------------------------------------

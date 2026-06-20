@@ -12,6 +12,10 @@
 	--mfe-surface: rgba(0, 0, 0, .025);
 	--mfe-muted: rgba(0, 0, 0, .55);
 	--mfe-accent: #2b6cb0;
+	/* Text colour to use on top of the accent (badges). Overridden per-type from PHP. */
+	--mfe-accent-contrast: #fff;
+	/* Soft accent wash used for hover/date backgrounds; falls back to the neutral surface. */
+	--mfe-tint: var(--mfe-surface);
 }
 
 @supports (color: color-mix(in srgb, red 50%, white)) {
@@ -19,6 +23,7 @@
 		--mfe-border: color-mix(in srgb, currentColor 14%, transparent);
 		--mfe-surface: color-mix(in srgb, currentColor 4%, transparent);
 		--mfe-muted: color-mix(in srgb, currentColor 58%, transparent);
+		--mfe-tint: color-mix(in srgb, var(--mfe-accent) 8%, transparent);
 	}
 }
 
@@ -66,11 +71,13 @@
 	border-radius: 14px;
 	background: var(--mfe-surface);
 	overflow: hidden;
-	transition: border-color .15s ease, transform .15s ease;
+	transition: border-color .15s ease, background-color .15s ease, transform .15s ease;
 }
 
 .mf-event .mfe-card:hover {
 	border-color: var(--mfe-accent);
+	/* Subtle wash of the type colour so the hover reads as "this type". */
+	background: var(--mfe-tint);
 	transform: translateY(-1px);
 }
 
@@ -89,16 +96,19 @@
 	background: transparent;
 }
 
-/* Date block */
+/* Date block — soft accent-tinted plate for an agenda feel */
 .mf-event .mfe-date {
 	flex: 0 0 auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	min-width: 56px;
+	min-width: 60px;
+	padding: .35em .4em;
 	line-height: 1.05;
 	text-align: center;
+	background: var(--mfe-tint);
+	border-radius: 10px;
 }
 
 .mf-event .mfe-day {
@@ -150,7 +160,7 @@
 	font-weight: 700;
 	letter-spacing: .04em;
 	text-transform: uppercase;
-	color: #fff;
+	color: var(--mfe-accent-contrast);
 	background: var(--mfe-accent);
 	padding: .1em .55em;
 	border-radius: 999px;
@@ -161,8 +171,27 @@
 	font-style: italic;
 }
 
+/* ---- Tablet --------------------------------------------------------- */
+@media (max-width: 768px) {
+	.mf-event .mfe-today-grid {
+		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+		gap: .6em;
+	}
+	.mf-event .mfe-day { font-size: 1.8em; }
+}
+
 /* ---- Small screens -------------------------------------------------- */
 @media (max-width: 480px) {
 	.mf-event .mfe-today-grid { grid-template-columns: 1fr; }
 	.mf-event .mfe-day { font-size: 1.7em; }
+}
+
+/* ---- Accessibility: respect reduced-motion -------------------------- */
+@media (prefers-reduced-motion: reduce) {
+	.mf-event .mfe-card {
+		transition: border-color .15s ease, background-color .15s ease;
+	}
+	.mf-event .mfe-card:hover {
+		transform: none;
+	}
 }
