@@ -1,8 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: MF Event 1.5.0\n"
+"Project-Id-Version: MF Event 1.6.0\n"
 "Report-Msgid-Bugs-To: mfdsgn@gmail.com\n"
-"PO-Revision-Date: 2026-06-21 02:22+0000\n"
+"POT-Creation-Date: 2026-06-21 02:37+0300\n"
+"PO-Revision-Date: 2026-06-21 02:40+0000\n"
 "Last-Translator: MF <mfdsgn@gmail.com>\n"
 "Language-Team: MF\n"
 "Language: nl_NL\n"
@@ -12,403 +13,443 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Domain: mf-event\n"
 
-#: mf-event.php:40
+#: mf-event.php:52
 msgid "Academic"
 msgstr "Academisch"
 
-#: mf-event.php:41
+#: mf-event.php:53
 msgid "Religious"
 msgstr "Religieus"
 
-#: mf-event.php:42
+#: mf-event.php:54
 msgid "National Holiday"
 msgstr "Nationale feestdag"
 
-#: mf-event.php:43
+#: mf-event.php:55
 msgid "Festival"
 msgstr "Festival"
 
-#: mf-event.php:44
+#: mf-event.php:56
 msgid "Break"
 msgstr "Vakantie"
 
-#: mf-event.php:45
+#: mf-event.php:57
 msgid "Other"
 msgstr "Overig"
 
-#: mf-event.php:101 mf-event.php:109
+#: mf-event.php:113 mf-event.php:121
 msgid "MF Events"
 msgstr "MF Evenementen"
 
-#: mf-event.php:102
+#: mf-event.php:114
 msgid "Event"
 msgstr "Evenement"
 
-#: mf-event.php:103
+#: mf-event.php:115
 msgid "Add Event"
 msgstr "Evenement toevoegen"
 
-#: mf-event.php:104
+#: mf-event.php:116
 msgid "Add New Event"
 msgstr "Nieuw evenement toevoegen"
 
-#: mf-event.php:105
+#: mf-event.php:117
 msgid "Edit Event"
 msgstr "Evenement bewerken"
 
-#: mf-event.php:106
+#: mf-event.php:118
 msgid "New Event"
 msgstr "Nieuw evenement"
 
-#: mf-event.php:107
+#: mf-event.php:119
 msgid "View Event"
 msgstr "Evenement bekijken"
 
-#: mf-event.php:108
+#: mf-event.php:120
 msgid "Search Events"
 msgstr "Evenementen zoeken"
 
-#: mf-event.php:129
+#: mf-event.php:141
 msgid "Event Date"
 msgstr "Evenementdatum"
 
-#: mf-event.php:130
+#: mf-event.php:142
 msgid "Related Links"
 msgstr "Gerelateerde links"
 
-#: mf-event.php:135
+#: mf-event.php:147
 msgid "January"
 msgstr "Januari"
 
-#: mf-event.php:136
+#: mf-event.php:148
 msgid "February"
 msgstr "Februari"
 
-#: mf-event.php:137
+#: mf-event.php:149
 msgid "March"
 msgstr "Maart"
 
-#: mf-event.php:138
+#: mf-event.php:150
 msgid "April"
 msgstr "April"
 
-#: mf-event.php:139
+#: mf-event.php:151
 msgid "May"
 msgstr "Mei"
 
-#: mf-event.php:140
+#: mf-event.php:152
 msgid "June"
 msgstr "Juni"
 
-#: mf-event.php:141
+#: mf-event.php:153
 msgid "July"
 msgstr "Juli"
 
-#: mf-event.php:142
+#: mf-event.php:154
 msgid "August"
 msgstr "Augustus"
 
-#: mf-event.php:143
+#: mf-event.php:155
 msgid "September"
 msgstr "September"
 
-#: mf-event.php:144
+#: mf-event.php:156
 msgid "October"
 msgstr "Oktober"
 
-#: mf-event.php:145
+#: mf-event.php:157
 msgid "November"
 msgstr "November"
 
-#: mf-event.php:146
+#: mf-event.php:158
 msgid "December"
 msgstr "December"
 
-#: mf-event.php:170
+#: mf-event.php:182
 msgid "Start date"
 msgstr "Startdatum"
 
-#: mf-event.php:173 mf-event.php:185
+#: mf-event.php:185 mf-event.php:197
 msgid "— Month —"
 msgstr "— Maand —"
 
-#: mf-event.php:178 mf-event.php:190
+#: mf-event.php:190 mf-event.php:202
 msgid "Day"
 msgstr "Dag"
 
-#: mf-event.php:182
+#: mf-event.php:194
 msgid "End date"
 msgstr "Einddatum"
 
-#: mf-event.php:182
+#: mf-event.php:194
 msgid "Only for multi-day events (e.g. a school break). Leave empty for single-day events."
 msgstr "Alleen voor meerdaagse evenementen (bijv. een schoolvakantie). Laat leeg voor eendaagse evenementen."
 
-#: mf-event.php:194
+#: mf-event.php:206
 msgid "Year"
 msgstr "Jaar"
 
-#: mf-event.php:194
+#: mf-event.php:206
 msgid "<strong>Leave empty</strong> for dates that repeat the same day every year (most Gregorian dates).<br><strong>Set a year</strong> for dates that shift each year — Hijri / religious days like Ramadan, Eid, Mawlid. When that day passes it disappears automatically; add the next year's entry to keep it showing."
 msgstr "<strong>Laat leeg</strong> voor datums die elk jaar op dezelfde dag vallen (de meeste Gregoriaanse datums).<br><strong>Stel een jaar in</strong> voor datums die elk jaar verschuiven — Hijri / religieuze dagen zoals Ramadan, Eid, Mawlid. Zodra die dag voorbij is, verdwijnt hij automatisch; voeg het item van volgend jaar toe om het zichtbaar te houden."
 
-#: mf-event.php:195
+#: mf-event.php:207
 msgid "e.g. 2027"
 msgstr "bijv. 2027"
 
-#: mf-event.php:198 mf-event.php:361
+#: mf-event.php:210 mf-event.php:373
 msgid "Type"
 msgstr "Type"
 
-#: mf-event.php:198
+#: mf-event.php:210
 msgid "Controls the colour accent of the card. Manage types under <em>MF Events → Settings</em>."
 msgstr "Bepaalt de accentkleur van de kaart. Beheer types onder <em>MF Evenementen → Instellingen</em>."
 
-#: mf-event.php:208
+#: mf-event.php:220
 msgid "The event name is the post title above. Order is handled automatically by date."
 msgstr "De naam van het evenement is de berichttitel hierboven. De volgorde wordt automatisch op datum bepaald."
 
-#: mf-event.php:209
+#: mf-event.php:221
 msgid "Add longer details in the main content editor above — if filled, the event opens in a pop-up on the front end. Set a Featured image to show it as the event poster."
 msgstr "Voeg langere details toe in de hoofdinhoud-editor hierboven — indien ingevuld opent het evenement in een pop-up aan de voorkant. Stel een Uitgelichte afbeelding in om die als evenementposter te tonen."
 
-#: mf-event.php:221
+#: mf-event.php:233
 msgid "Pages"
 msgstr "Pagina's"
 
-#: mf-event.php:224
+#: mf-event.php:236
 msgid "Posts"
 msgstr "Berichten"
 
-#: mf-event.php:228
+#: mf-event.php:240
 msgid "— Manual link (use URL field) —"
 msgstr "— Handmatige link (gebruik URL-veld) —"
 
-#: mf-event.php:232
+#: mf-event.php:244
 #, php-format
 msgid "#%d (no title)"
 msgstr "#%d (geen titel)"
 
-#: mf-event.php:256
+#: mf-event.php:268
 msgid "Link this event to related content. Pick a page/post from your site (its link stays correct even if the URL changes), or enter a custom URL. Links appear inside the event pop-up."
 msgstr "Koppel dit evenement aan gerelateerde inhoud. Kies een pagina/bericht van je site (de link blijft correct, ook als de URL verandert) of voer een aangepaste URL in. Links verschijnen in de pop-up van het evenement."
 
-#: mf-event.php:259
+#: mf-event.php:271
 msgid "Site content"
 msgstr "Site-inhoud"
 
-#: mf-event.php:260
+#: mf-event.php:272
 msgid "Custom URL"
 msgstr "Aangepaste URL"
 
-#: mf-event.php:261
+#: mf-event.php:273
 msgid "Label (optional)"
 msgstr "Label (optioneel)"
 
-#: mf-event.php:262 mf-event.php:527
+#: mf-event.php:274 mf-event.php:569
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: mf-event.php:279
+#: mf-event.php:291
 msgid "+ Add link"
 msgstr "+ Link toevoegen"
 
-#: mf-event.php:360
+#: mf-event.php:372
 msgid "Date"
 msgstr "Datum"
 
-#: mf-event.php:384
+#: mf-event.php:396
 msgid "(yearly)"
 msgstr "(jaarlijks)"
 
-#: mf-event.php:412
+#: mf-event.php:424
 msgid "MF Event Settings"
 msgstr "MF Event-instellingen"
 
-#: mf-event.php:413
+#: mf-event.php:425
 msgid "Settings"
 msgstr "Instellingen"
 
-#: mf-event.php:477
+#: mf-event.php:494
 msgid "MF Event — Settings"
 msgstr "MF Event — Instellingen"
 
-#: mf-event.php:479
+#: mf-event.php:496
 msgid "Settings saved."
 msgstr "Instellingen opgeslagen."
 
-#: mf-event.php:482
+#: mf-event.php:499
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: mf-event.php:483
+#: mf-event.php:500
 msgid "Place this shortcode in any page, post, or page-builder text/HTML element:"
 msgstr "Plaats deze shortcode op een pagina, bericht of tekst/HTML-element van een paginabouwer:"
 
-#: mf-event.php:486
+#: mf-event.php:503
 #, php-format
 msgid "(the alias %s works too)"
 msgstr "(de alias %s werkt ook)"
 
-#: mf-event.php:489
+#: mf-event.php:506
 msgid "Parameters"
 msgstr "Parameters"
 
-#: mf-event.php:492
+#: mf-event.php:509
 msgid "Parameter"
 msgstr "Parameter"
 
-#: mf-event.php:493
+#: mf-event.php:510
 msgid "Default"
 msgstr "Standaard"
 
-#: mf-event.php:494
+#: mf-event.php:511
 msgid "What it does"
 msgstr "Wat het doet"
 
-#: mf-event.php:495
+#: mf-event.php:512
 msgid "Example"
 msgstr "Voorbeeld"
 
-#: mf-event.php:498
+#: mf-event.php:515
 msgid "How many months ahead to show. Events further in the future than this are hidden (this is also what keeps next year’s religious dates from appearing too early)."
 msgstr "Hoeveel maanden vooruit getoond worden. Evenementen verder in de toekomst worden verborgen (dit voorkomt ook dat religieuze datums van volgend jaar te vroeg verschijnen)."
 
-#: mf-event.php:499
+#: mf-event.php:516
 msgid "Maximum number of upcoming items to list. <code>0</code> means no limit."
 msgstr "Maximaal aantal komende items in de lijst. <code>0</code> betekent geen limiet."
 
-#: mf-event.php:500
+#: mf-event.php:517
 msgid "Show the highlighted “Today” boxes at the top for events happening today. Set to <code>no</code> to hide that section."
 msgstr "Toont de gemarkeerde “Vandaag”-vakken bovenaan voor evenementen die vandaag plaatsvinden. Zet op <code>no</code> om dat gedeelte te verbergen."
 
-#: mf-event.php:501
+#: mf-event.php:518
 msgid "(empty)"
 msgstr "(leeg)"
 
-#: mf-event.php:501
+#: mf-event.php:518
 msgid "Optional heading shown above the list."
 msgstr "Optionele kop die boven de lijst wordt getoond."
 
-#: mf-event.php:502
+#: mf-event.php:519
 msgid "(all)"
 msgstr "(alle)"
 
-#: mf-event.php:502
+#: mf-event.php:519
 msgid "Show only one type, using its <em>slug</em> (see the Types table below). Leave empty to show all."
 msgstr "Toont slechts één type, met behulp van de <em>slug</em> (zie de Types-tabel hieronder). Laat leeg om alle te tonen."
 
-#: mf-event.php:505
+#: mf-event.php:520
+msgid "(setting)"
+msgstr "(instelling)"
+
+#: mf-event.php:520
+msgid "Override the display style for this one shortcode: <code>cards</code>, <code>editorial</code> or <code>timeline</code>. Leave empty to use the default chosen below."
+msgstr "Overschrijf de weergavestijl voor alleen deze shortcode: <code>cards</code>, <code>editorial</code> of <code>timeline</code>. Laat leeg om de hieronder gekozen standaard te gebruiken."
+
+#: mf-event.php:523
 msgid "You can combine parameters, e.g. <code>[mf_event title=\"This Year\" months=\"12\" limit=\"10\"]</code>."
 msgstr "Je kunt parameters combineren, bijv. <code>[mf_event title=\"This Year\" months=\"12\" limit=\"10\"]</code>."
 
-#: mf-event.php:507
+#: mf-event.php:525
 msgid "How dates work"
 msgstr "Hoe datums werken"
 
-#: mf-event.php:509
+#: mf-event.php:527
 msgid "<strong>No year</strong> on an event → it repeats the same day every year (use for fixed Gregorian dates and school events)."
 msgstr "<strong>Geen jaar</strong> bij een evenement → het herhaalt elk jaar op dezelfde dag (gebruik voor vaste Gregoriaanse datums en schoolevenementen)."
 
-#: mf-event.php:510
+#: mf-event.php:528
 msgid "<strong>A year set</strong> on an event → a one-off date for that specific year (use for Hijri / religious days that shift). When the day passes it drops off automatically; add next year’s entry to keep it visible."
 msgstr "<strong>Een jaar ingesteld</strong> bij een evenement → een eenmalige datum voor dat specifieke jaar (gebruik voor verschuivende Hijri / religieuze dagen). Zodra de dag voorbij is, verdwijnt hij automatisch; voeg het item van volgend jaar toe om het zichtbaar te houden."
 
-#: mf-event.php:511
+#: mf-event.php:529
 msgid "The list is ordered relative to <strong>today</strong>. Items happening today appear at the top in their own boxes. Make sure your <em>Settings → General → Timezone</em> in WordPress is correct, since “today” uses the site timezone."
 msgstr "De lijst is geordend ten opzichte van <strong>vandaag</strong>. Items van vandaag verschijnen bovenaan in hun eigen vakken. Zorg dat <em>Instellingen → Algemeen → Tijdzone</em> in WordPress correct is, want “vandaag” gebruikt de tijdzone van de site."
 
-#: mf-event.php:512
+#: mf-event.php:530
 msgid "Multi-day events use the optional <strong>End date</strong> (year-spanning ranges like Dec 25 – Jan 3 are supported)."
 msgstr "Meerdaagse evenementen gebruiken de optionele <strong>Einddatum</strong> (bereiken over jaargrenzen zoals 25 dec – 3 jan worden ondersteund)."
 
-#: mf-event.php:517
+#: mf-event.php:538
+msgid "Display style"
+msgstr "Weergavestijl"
+
+#: mf-event.php:539
+msgid "Choose how the event list looks on the front end. A single shortcode can override this with the style=\"…\" parameter."
+msgstr "Kies hoe de evenementenlijst er aan de voorkant uitziet. Eén shortcode kan dit overschrijven met de parameter style=\"…\"."
+
+#: mf-event.php:542
+msgid "Cards"
+msgstr "Kaarten"
+
+#: mf-event.php:542
+msgid "Coloured cards with a filled date tile and a soft type-colour wash. Warm and inviting."
+msgstr "Gekleurde kaarten met een gevulde datumtegel en een zachte waas van de typekleur. Warm en uitnodigend."
+
+#: mf-event.php:543
+msgid "Editorial"
+msgstr "Redactioneel"
+
+#: mf-event.php:543
+msgid "Calm hairline rows grouped by month, with the type shown as a small label. Clean and premium."
+msgstr "Rustige rijen met dunne lijnen, gegroepeerd per maand, met het type als klein label. Strak en premium."
+
+#: mf-event.php:544
+msgid "Timeline"
+msgstr "Tijdlijn"
+
+#: mf-event.php:544
+msgid "A vertical line with a coloured dot per event, grouped by month. Calendar feel."
+msgstr "Een verticale lijn met een gekleurde stip per evenement, gegroepeerd per maand. Kalendergevoel."
+
+#: mf-event.php:561
 msgid "Event Types"
 msgstr "Evenementtypes"
 
-#: mf-event.php:518
+#: mf-event.php:562
 msgid "Each type has a colour used as the card’s accent. Add your own, rename them, or change colours. The <strong>slug</strong> is the value used in the <code>type=\"…\"</code> shortcode parameter; it’s generated automatically from the name for new types and can’t be edited afterwards (so existing events keep working)."
 msgstr "Elk type heeft een kleur die als accent van de kaart wordt gebruikt. Voeg eigen types toe, hernoem ze of wijzig kleuren. De <strong>slug</strong> is de waarde die wordt gebruikt in de shortcode-parameter <code>type=\"…\"</code>; deze wordt voor nieuwe types automatisch uit de naam gegenereerd en kan daarna niet meer worden bewerkt (zodat bestaande evenementen blijven werken)."
 
-#: mf-event.php:524
+#: mf-event.php:566
 msgid "Name"
 msgstr "Naam"
 
-#: mf-event.php:525
+#: mf-event.php:567
 msgid "Slug"
 msgstr "Slug"
 
-#: mf-event.php:526
+#: mf-event.php:568
 msgid "Colour"
 msgstr "Kleur"
 
-#: mf-event.php:541
+#: mf-event.php:583
 msgid "+ Add type"
 msgstr "+ Type toevoegen"
 
-#: mf-event.php:544
+#: mf-event.php:586
 msgid "Save settings"
 msgstr "Instellingen opslaan"
 
-#: mf-event.php:546
+#: mf-event.php:588
 msgid "Reset all types to the defaults? Custom types will be removed."
 msgstr "Alle types terugzetten naar standaard? Aangepaste types worden verwijderd."
 
-#: mf-event.php:546
+#: mf-event.php:588
 msgid "Reset to defaults"
 msgstr "Terugzetten naar standaard"
 
-#: mf-event.php:556
+#: mf-event.php:598
 msgid "e.g. Exam"
 msgstr "bijv. Examen"
 
-#: mf-event.php:557
+#: mf-event.php:599
 msgid "auto from name"
 msgstr "automatisch uit naam"
 
-#: mf-event.php:714
+#: mf-event.php:757
 msgid "Close"
 msgstr "Sluiten"
 
-#: mf-event.php:715 mf-event.php:915
+#: mf-event.php:758 mf-event.php:975
 msgid "Related links"
 msgstr "Gerelateerde links"
 
-#: mf-event.php:794 mf-event.php:898
+#: mf-event.php:845 mf-event.php:955
 msgid "Today"
 msgstr "Vandaag"
 
-#: mf-event.php:809
+#: mf-event.php:866
 msgid "No upcoming events."
 msgstr "Geen komende evenementen."
 
-#: mf-event.php:902
+#: mf-event.php:962
 msgid "Details"
 msgstr "Details"
 
-#: mf-event.php:947
+#: mf-event.php:1007
 msgid "No events yet."
 msgstr "Nog geen evenementen."
 
-#: mf-event.php:949
+#: mf-event.php:1009
 msgid "Load sample events"
 msgstr "Voorbeeldevenementen laden"
 
-#: mf-event.php:950
+#: mf-event.php:1010
 msgid "to start from a ready-made academic-calendar set you can edit, or add your own."
 msgstr "om te beginnen met een kant-en-klare academische kalender die je kunt bewerken, of voeg je eigen toe."
 
-#: mf-event.php:1049
+#: mf-event.php:1109
 #, php-format
 msgid "Found %s event from the previous isabet-events plugin."
 msgid_plural "Found %s events from the previous isabet-events plugin."
 msgstr[0] "%s evenement gevonden van de vorige isabet-events-plugin."
 msgstr[1] "%s evenementen gevonden van de vorige isabet-events-plugin."
 
-#: mf-event.php:1053
+#: mf-event.php:1113
 msgid "Import them into MF Event"
 msgstr "Importeer ze in MF Event"
 
-#: mf-event.php:1054
+#: mf-event.php:1114
 msgid "— copies titles, dates and types. Runs once; no duplicates."
 msgstr "— kopieert titels, datums en types. Wordt één keer uitgevoerd; geen duplicaten."

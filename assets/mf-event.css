@@ -54,7 +54,7 @@
 	gap: .75em;
 }
 
-/* ---- Card ----------------------------------------------------------- */
+/* ---- Card: shared structure ----------------------------------------- */
 .mf-event .mfe-list {
 	display: flex;
 	flex-direction: column;
@@ -66,37 +66,11 @@
 	display: flex;
 	align-items: stretch;
 	gap: 1em;
-	padding: .85em 1.1em .85em 1.25em;
-	border: 1px solid var(--mfe-border);
+	padding: .85em 1.1em;
 	border-radius: 14px;
-	background: var(--mfe-surface);
-	overflow: hidden;
-	transition: border-color .15s ease, background-color .15s ease, transform .15s ease;
+	transition: border-color .15s ease, background-color .15s ease, box-shadow .15s ease, transform .15s ease;
 }
 
-.mf-event .mfe-card:hover {
-	border-color: var(--mfe-accent);
-	/* Subtle wash of the type colour so the hover reads as "this type". */
-	background: var(--mfe-tint);
-	transform: translateY(-1px);
-}
-
-/* Left accent stripe, colour-coded by type */
-.mf-event .mfe-card::before {
-	content: "";
-	position: absolute;
-	left: 0; top: 0; bottom: 0;
-	width: 4px;
-	background: var(--mfe-accent);
-}
-
-.mf-event .mfe-card--today {
-	border-color: var(--mfe-accent);
-	box-shadow: 0 0 0 2px var(--mfe-accent) inset;
-	background: transparent;
-}
-
-/* Date block — soft accent-tinted plate for an agenda feel */
 .mf-event .mfe-date {
 	flex: 0 0 auto;
 	display: flex;
@@ -104,17 +78,11 @@
 	align-items: center;
 	justify-content: center;
 	min-width: 60px;
-	padding: .35em .4em;
 	line-height: 1.05;
 	text-align: center;
-	background: var(--mfe-tint);
-	border-radius: 10px;
 }
 
-.mf-event .mfe-day {
-	font-size: 1.95em;
-	font-weight: 700;
-}
+.mf-event .mfe-day { font-size: 1.95em; font-weight: 700; }
 
 .mf-event .mfe-mon {
 	font-size: .72em;
@@ -124,12 +92,8 @@
 	color: var(--mfe-accent);
 }
 
-.mf-event .mfe-year {
-	font-size: .72em;
-	color: var(--mfe-muted);
-}
+.mf-event .mfe-year { font-size: .72em; color: var(--mfe-muted); }
 
-/* Body */
 .mf-event .mfe-body {
 	display: flex;
 	flex-direction: column;
@@ -155,6 +119,17 @@
 	color: var(--mfe-muted);
 }
 
+/* Type label with a colour-coded dot */
+.mf-event .mfe-type { display: inline-flex; align-items: center; gap: .4em; }
+.mf-event .mfe-type::before {
+	content: "";
+	width: .55em;
+	height: .55em;
+	border-radius: 50%;
+	background: var(--mfe-accent);
+	flex: 0 0 auto;
+}
+
 .mf-event .mfe-badge {
 	font-size: .72em;
 	font-weight: 700;
@@ -166,10 +141,135 @@
 	border-radius: 999px;
 }
 
-.mf-event .mfe-empty {
+.mf-event .mfe-empty { color: var(--mfe-muted); font-style: italic; }
+
+/* Month divider (used by editorial + timeline skins) */
+.mf-event .mfe-month {
+	font-size: .74em;
+	font-weight: 700;
+	letter-spacing: .1em;
+	text-transform: uppercase;
 	color: var(--mfe-muted);
-	font-style: italic;
 }
+
+/* "Today" cards (the grid at the top) always read as solid, coloured tiles */
+.mf-event .mfe-today-grid .mfe-card {
+	border: 1px solid var(--mfe-accent);
+	background: var(--mfe-tint);
+}
+.mf-event .mfe-today-grid .mfe-date {
+	background: var(--mfe-accent);
+	color: var(--mfe-accent-contrast);
+	border-radius: 12px;
+	padding: .45em .5em;
+}
+.mf-event .mfe-today-grid .mfe-mon { color: inherit; opacity: .92; }
+.mf-event .mfe-today-grid .mfe-year { color: inherit; opacity: .72; }
+
+/* ===== Skin: CARDS ==================================================== */
+.mf-event.mfe-style-cards .mfe-month { display: none; }
+
+.mf-event.mfe-style-cards .mfe-list .mfe-card {
+	border: 1px solid var(--mfe-border);
+	background: var(--mfe-tint);
+}
+.mf-event.mfe-style-cards .mfe-list .mfe-date {
+	background: var(--mfe-accent);
+	color: var(--mfe-accent-contrast);
+	border-radius: 12px;
+	padding: .45em .5em;
+}
+.mf-event.mfe-style-cards .mfe-list .mfe-mon { color: inherit; opacity: .92; }
+.mf-event.mfe-style-cards .mfe-list .mfe-year { color: inherit; opacity: .72; }
+
+.mf-event.mfe-style-cards .mfe-card:hover {
+	border-color: var(--mfe-accent);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px -12px rgba(0, 0, 0, .45);
+}
+.mf-event.mfe-style-cards .mfe-card--today {
+	border-color: var(--mfe-accent);
+	box-shadow: 0 0 0 2px var(--mfe-accent) inset;
+}
+@supports (color: color-mix(in srgb, red 50%, white)) {
+	.mf-event.mfe-style-cards .mfe-card:hover {
+		box-shadow: 0 10px 26px -12px color-mix(in srgb, var(--mfe-accent) 55%, transparent);
+	}
+}
+
+/* ===== Skin: EDITORIAL =============================================== */
+.mf-event.mfe-style-editorial .mfe-list { gap: 0; }
+
+.mf-event.mfe-style-editorial .mfe-list .mfe-card {
+	border: 0;
+	border-bottom: 1px solid var(--mfe-border);
+	border-radius: 0;
+	padding: 1.05em .25em;
+	gap: 1.1em;
+}
+.mf-event.mfe-style-editorial .mfe-list .mfe-card:last-child { border-bottom: 0; }
+.mf-event.mfe-style-editorial .mfe-list .mfe-day { font-size: 1.7em; }
+.mf-event.mfe-style-editorial .mfe-list .mfe-card:hover {
+	background: var(--mfe-tint);
+	border-radius: 8px;
+}
+.mf-event.mfe-style-editorial .mfe-list .mfe-card--today {
+	background: var(--mfe-tint);
+	border-bottom-color: transparent;
+	border-radius: 8px;
+}
+.mf-event.mfe-style-editorial .mfe-month {
+	margin: 1.6em 0 .2em;
+	padding-bottom: .45em;
+	border-bottom: 2px solid var(--mfe-border);
+}
+.mf-event.mfe-style-editorial .mfe-list > .mfe-month:first-child { margin-top: 0; }
+
+/* ===== Skin: TIMELINE ================================================ */
+.mf-event.mfe-style-timeline .mfe-list {
+	position: relative;
+	gap: 0;
+	padding-left: 1.7em;
+}
+.mf-event.mfe-style-timeline .mfe-list::before {
+	content: "";
+	position: absolute;
+	left: .45em;
+	top: .6em;
+	bottom: .6em;
+	width: 2px;
+	background: var(--mfe-border);
+}
+.mf-event.mfe-style-timeline .mfe-list .mfe-card {
+	border: 0;
+	border-radius: 0;
+	padding: .7em .25em .85em;
+	gap: 1em;
+}
+.mf-event.mfe-style-timeline .mfe-list .mfe-card::before {
+	content: "";
+	position: absolute;
+	left: -1.59em;
+	top: 1.15em;
+	width: .8em;
+	height: .8em;
+	border-radius: 50%;
+	background: var(--mfe-accent);
+	border: 2px solid var(--mfe-accent);
+}
+.mf-event.mfe-style-timeline .mfe-list .mfe-day { font-size: 1.5em; }
+.mf-event.mfe-style-timeline .mfe-list .mfe-card:hover {
+	background: var(--mfe-tint);
+	border-radius: 8px;
+}
+.mf-event.mfe-style-timeline .mfe-list .mfe-card--today::before {
+	transform: scale(1.25);
+}
+.mf-event.mfe-style-timeline .mfe-month {
+	margin: 1.1em 0 .35em;
+	padding-left: .1em;
+}
+.mf-event.mfe-style-timeline .mfe-list > .mfe-month:first-child { margin-top: 0; }
 
 /* ---- "Details" affordance on clickable cards ------------------------ */
 .mf-event .mfe-card.has-detail { cursor: pointer; }

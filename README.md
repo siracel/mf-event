@@ -12,6 +12,7 @@ The output inherits the active theme's typography and adapts to the surrounding 
 ## Features
 
 - 📅 **One shortcode** — `[mf_event]` (alias `[mf_events]`), drop it anywhere.
+- 🎛️ **Three display styles** — **Cards**, **Editorial** (month-grouped hairline rows), or **Timeline** (vertical line with dots). Chosen in settings or per shortcode via `style="…"`.
 - 🔁 **Recurring & one-off dates** — leave the year empty to repeat yearly, or set a year for shifting religious dates that auto-expire after they pass.
 - 📝 **Event details in a pop-up** — write rich content in the normal editor; if filled, the card opens an **in-page modal** (no separate page). Accessible (keyboard, Esc, focus-trap) and dark-mode aware.
 - 🖼️ **Event poster** — set a Featured image and it shows at the top of the pop-up.
@@ -50,8 +51,19 @@ The output inherits the active theme's typography and adapts to the surrounding 
 | `today`   | `yes`   | Show the highlighted "Today" boxes at the top. `no` to hide. | `[mf_event today="no"]` |
 | `title`   | *(empty)* | Optional heading shown above the list. | `[mf_event title="Academic Calendar"]` |
 | `type`    | *(all)* | Show only one type, by its **slug**. | `[mf_event type="religious"]` |
+| `style`   | *(setting)* | Override the display style for this shortcode: `cards`, `editorial`, or `timeline`. | `[mf_event style="timeline"]` |
 
 Parameters can be combined, e.g. `[mf_event title="This Year" months="12" limit="10"]`.
+
+### Display styles
+
+Pick the default look under **MF Events → Settings → Display style**, or override per shortcode with `style="…"`:
+
+- **`cards`** — coloured cards with a filled date tile and a soft type-colour wash. Warm and inviting. *(default)*
+- **`editorial`** — calm hairline rows grouped by month, type shown as a small label. Clean and premium.
+- **`timeline`** — a vertical line with a coloured dot per event, grouped by month. Calendar feel.
+
+All three inherit the theme font, auto-contrast their badges, and stay responsive/accessible.
 
 ### How dates work
 
