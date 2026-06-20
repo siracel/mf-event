@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       MF Event
  * Description:       Agenda-style upcoming-events list via the [mf_event] shortcode. Recurring (annual) dates and year-specific dates (e.g. Hijri / religious days) you update each year. Inherits the active theme's typography. Custom event types with colours. Reusable on any site.
- * Version:           1.4.1
+ * Version:           1.5.0
  * Author:            MF
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -27,7 +27,7 @@ class MF_Event {
 	const CPT     = 'mf_event';
 	const PREFIX  = '_mfe_';
 	const OPT     = 'mfe_types';
-	const VERSION = '1.4.1';
+	const VERSION = '1.5.0';
 	const TD       = 'mf-event';
 
 	// For importing data from the original "isabet-events" plugin.
@@ -58,6 +58,7 @@ class MF_Event {
 	public function __construct() {
 		add_action( 'init', array( $this, 'load_textdomain' ) );
 		add_action( 'init', array( $this, 'register_cpt' ) );
+		add_action( 'after_setup_theme', array( $this, 'ensure_thumbnail_support' ), 11 );
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
 		add_action( 'save_post_' . self::CPT, array( $this, 'save_meta' ), 10, 2 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_assets' ) );
@@ -77,6 +78,16 @@ class MF_Event {
 	/** Load translations from /languages. */
 	public function load_textdomain() {
 		load_plugin_textdomain( self::TD, false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+	}
+
+	/** Make sure the featured-image (poster) box shows for our CPT, even on themes that scope thumbnail support. */
+	public function ensure_thumbnail_support() {
+		$support = get_theme_support( 'post-thumbnails' );
+		if ( false === $support ) {
+			add_theme_support( 'post-thumbnails', array( self::CPT ) );
+		} elseif ( is_array( $support ) && isset( $support[0] ) && is_array( $support[0] ) && ! in_array( self::CPT, $support[0], true ) ) {
+			add_theme_support( 'post-thumbnails', array_merge( $support[0], array( self::CPT ) ) );
+		}
 	}
 
 	/* ---------------------------------------------------------------------
@@ -102,7 +113,7 @@ class MF_Event {
 				'show_in_menu'        => true,
 				'menu_position'       => 25,
 				'menu_icon'           => 'dashicons-calendar-alt',
-				'supports'            => array( 'title' ),
+				'supports'            => array( 'title', 'editor', 'thumbnail' ),
 				'has_archive'         => false,
 				'publicly_queryable'  => false,
 				'exclude_from_search' => true,
@@ -116,6 +127,7 @@ class MF_Event {
 	 * ------------------------------------------------------------------- */
 	public function add_meta_box() {
 		add_meta_box( 'mfe_date', __( 'Event Date', 'mf-event' ), array( $this, 'render_meta_box' ), self::CPT, 'normal', 'high' );
+		add_meta_box( 'mfe_links', __( 'Related Links', 'mf-event' ), array( $this, 'render_links_box' ), self::CPT, 'normal', 'default' );
 	}
 
 	private function months_list() {
@@ -194,6 +206,96 @@ class MF_Event {
 			</tr>
 		</table>
 		<p class="desc"><?php esc_html_e( 'The event name is the post title above. Order is handled automatically by date.', 'mf-event' ); ?></p>
+		<p class="desc"><?php esc_html_e( 'Add longer details in the main content editor above — if filled, the event opens in a pop-up on the front end. Set a Featured image to show it as the event poster.', 'mf-event' ); ?></p>
+		<?php
+	}
+
+	/** Options for the "site content" dropdown (pages + recent posts), cached per request. */
+	private function related_options( $selected = 0 ) {
+		static $groups = null;
+		if ( null === $groups ) {
+			$groups = array();
+			$pages  = get_posts( array( 'post_type' => 'page', 'post_status' => 'publish', 'numberposts' => -1, 'orderby' => 'title', 'order' => 'ASC', 'suppress_filters' => false ) );
+			$posts  = get_posts( array( 'post_type' => 'post', 'post_status' => 'publish', 'numberposts' => 200, 'orderby' => 'date', 'order' => 'DESC', 'suppress_filters' => false ) );
+			if ( $pages ) {
+				$groups[ __( 'Pages', 'mf-event' ) ] = $pages;
+			}
+			if ( $posts ) {
+				$groups[ __( 'Posts', 'mf-event' ) ] = $posts;
+			}
+		}
+
+		$html = '<option value="0">' . esc_html__( '— Manual link (use URL field) —', 'mf-event' ) . '</option>';
+		foreach ( $groups as $label => $items ) {
+			$html .= '<optgroup label="' . esc_attr( $label ) . '">';
+			foreach ( $items as $p ) {
+				$title = $p->post_title ? $p->post_title : sprintf( /* translators: %d: post ID. */ __( '#%d (no title)', 'mf-event' ), $p->ID );
+				$html .= sprintf(
+					'<option value="%d"%s>%s</option>',
+					(int) $p->ID,
+					selected( (int) $selected, (int) $p->ID, false ),
+					esc_html( $title )
+				);
+			}
+			$html .= '</optgroup>';
+		}
+		return $html;
+	}
+
+	public function render_links_box( $post ) {
+		$links = get_post_meta( $post->ID, self::PREFIX . 'links', true );
+		if ( ! is_array( $links ) ) {
+			$links = array();
+		}
+		?>
+		<style>
+			.mfe-links-table td{vertical-align:middle}
+			.mfe-links-table input[type=text],.mfe-links-table input[type=url]{width:100%}
+			.mfe-links-table .desc{color:#666;font-size:12px}
+		</style>
+		<p class="desc"><?php esc_html_e( 'Link this event to related content. Pick a page/post from your site (its link stays correct even if the URL changes), or enter a custom URL. Links appear inside the event pop-up.', 'mf-event' ); ?></p>
+		<table class="widefat striped mfe-links-table" id="mfe-links-table">
+			<thead><tr>
+				<th style="width:38%"><?php esc_html_e( 'Site content', 'mf-event' ); ?></th>
+				<th style="width:32%"><?php esc_html_e( 'Custom URL', 'mf-event' ); ?></th>
+				<th style="width:22%"><?php esc_html_e( 'Label (optional)', 'mf-event' ); ?></th>
+				<th style="width:8%;text-align:center"><?php esc_html_e( 'Delete', 'mf-event' ); ?></th>
+			</tr></thead>
+			<tbody>
+				<?php $li = 0; foreach ( $links as $row ) :
+					$rid   = isset( $row['id'] ) ? (int) $row['id'] : 0;
+					$rurl  = isset( $row['url'] ) ? $row['url'] : '';
+					$rlbl  = isset( $row['label'] ) ? $row['label'] : '';
+					?>
+					<tr>
+						<td><select name="mfe_links[<?php echo (int) $li; ?>][id]"><?php echo $this->related_options( $rid ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></select></td>
+						<td><input type="url" name="mfe_links[<?php echo (int) $li; ?>][url]" value="<?php echo esc_attr( $rurl ); ?>" placeholder="https://" /></td>
+						<td><input type="text" name="mfe_links[<?php echo (int) $li; ?>][label]" value="<?php echo esc_attr( $rlbl ); ?>" /></td>
+						<td style="text-align:center"><input type="checkbox" name="mfe_links[<?php echo (int) $li; ?>][delete]" value="1" /></td>
+					</tr>
+				<?php $li++; endforeach; ?>
+			</tbody>
+		</table>
+		<p><button type="button" class="button" id="mfe-add-link"><?php esc_html_e( '+ Add link', 'mf-event' ); ?></button></p>
+		<script>
+		(function(){
+			var btn = document.getElementById('mfe-add-link');
+			var tbody = document.querySelector('#mfe-links-table tbody');
+			var i = <?php echo (int) $li; ?>;
+			var opts = <?php echo wp_json_encode( $this->related_options( 0 ) ); ?>;
+			if(!btn) return;
+			btn.addEventListener('click', function(){
+				var tr = document.createElement('tr');
+				tr.innerHTML =
+					'<td><select name="mfe_links['+i+'][id]">'+opts+'</select></td>'+
+					'<td><input type="url" name="mfe_links['+i+'][url]" placeholder="https://"></td>'+
+					'<td><input type="text" name="mfe_links['+i+'][label]"></td>'+
+					'<td style="text-align:center"><input type="checkbox" name="mfe_links['+i+'][delete]" value="1"></td>';
+				tbody.appendChild(tr);
+				i++;
+			});
+		})();
+		</script>
 		<?php
 	}
 
@@ -228,6 +330,23 @@ class MF_Event {
 			$type = (string) key( $types );
 		}
 		update_post_meta( $post_id, self::PREFIX . 'type', $type );
+
+		// Related links.
+		$rows  = isset( $_POST['mfe_links'] ) && is_array( $_POST['mfe_links'] ) ? wp_unslash( $_POST['mfe_links'] ) : array();
+		$links = array();
+		foreach ( $rows as $row ) {
+			if ( ! empty( $row['delete'] ) ) {
+				continue;
+			}
+			$id    = isset( $row['id'] ) ? absint( $row['id'] ) : 0;
+			$url   = isset( $row['url'] ) ? esc_url_raw( trim( (string) $row['url'] ) ) : '';
+			$label = isset( $row['label'] ) ? sanitize_text_field( $row['label'] ) : '';
+			if ( ! $id && '' === $url ) {
+				continue; // empty row
+			}
+			$links[] = array( 'id' => $id, 'url' => $url, 'label' => $label );
+		}
+		update_post_meta( $post_id, self::PREFIX . 'links', $links );
 	}
 
 	/* ---------------------------------------------------------------------
@@ -459,6 +578,7 @@ class MF_Event {
 	 * ------------------------------------------------------------------- */
 	public function register_assets() {
 		wp_register_style( 'mf-event', plugins_url( 'assets/mf-event.css', __FILE__ ), array(), self::VERSION );
+		wp_register_script( 'mf-event', plugins_url( 'assets/mf-event.js', __FILE__ ), array(), self::VERSION, true );
 	}
 
 	/** Build per-type accent colours as inline CSS so custom types work. */
@@ -586,6 +706,15 @@ class MF_Event {
 
 		wp_enqueue_style( 'mf-event' );
 		wp_add_inline_style( 'mf-event', $this->types_inline_css() );
+		wp_enqueue_script( 'mf-event' );
+		wp_localize_script(
+			'mf-event',
+			'MFE_I18N',
+			array(
+				'close'   => __( 'Close', 'mf-event' ),
+				'related' => __( 'Related links', 'mf-event' ),
+			)
+		);
 
 		$tz         = wp_timezone();
 		$today      = new DateTime( 'today', $tz );
@@ -625,11 +754,14 @@ class MF_Event {
 			list( $start, $end ) = $resolved;
 
 			$item = array(
-				'title' => get_the_title( $post ),
-				'type'  => $ev['type'] ? $ev['type'] : 'other',
-				'start' => $start,
-				'end'   => $end,
-				'sort'  => (int) $start->format( 'Ymd' ),
+				'title'  => get_the_title( $post ),
+				'type'   => $ev['type'] ? $ev['type'] : 'other',
+				'start'  => $start,
+				'end'    => $end,
+				'sort'   => (int) $start->format( 'Ymd' ),
+				'detail' => $this->render_detail_html( $post ),
+				'poster' => get_the_post_thumbnail( $post->ID, 'large', array( 'class' => 'mfe-poster-img', 'loading' => 'lazy' ) ),
+				'links'  => $this->resolve_links( get_post_meta( $post->ID, self::PREFIX . 'links', true ) ),
 			);
 
 			if ( $start <= $today && $today <= $end ) {
@@ -685,6 +817,51 @@ class MF_Event {
 		return wp_date( $format, $d->getTimestamp(), $d->getTimezone() );
 	}
 
+	/** Render the event's editor content (poster shown separately) for the modal. */
+	private function render_detail_html( $post ) {
+		$content = isset( $post->post_content ) ? $post->post_content : '';
+		if ( '' === trim( $content ) ) {
+			return '';
+		}
+		$content = do_blocks( $content );
+		$content = wpautop( $content );
+		return wp_kses_post( $content );
+	}
+
+	/** Turn stored link rows into renderable [url,label] pairs, resolving post IDs to permalinks. */
+	private function resolve_links( $raw ) {
+		$out = array();
+		if ( ! is_array( $raw ) ) {
+			return $out;
+		}
+		foreach ( $raw as $row ) {
+			$id    = isset( $row['id'] ) ? (int) $row['id'] : 0;
+			$label = isset( $row['label'] ) ? $row['label'] : '';
+			if ( $id ) {
+				if ( 'publish' !== get_post_status( $id ) ) {
+					continue; // skip trashed/private/unpublished targets
+				}
+				$url = get_permalink( $id );
+				if ( ! $url ) {
+					continue;
+				}
+				if ( '' === $label ) {
+					$label = get_the_title( $id );
+				}
+			} else {
+				$url = isset( $row['url'] ) ? $row['url'] : '';
+				if ( '' === $url ) {
+					continue;
+				}
+				if ( '' === $label ) {
+					$label = $url;
+				}
+			}
+			$out[] = array( 'url' => $url, 'label' => $label );
+		}
+		return $out;
+	}
+
 	private function card_html( $item, $is_today ) {
 		$start = $item['start'];
 		$end   = $item['end'];
@@ -704,9 +881,15 @@ class MF_Event {
 			$meta = $this->fmt( $start, 'l, F j, Y' );
 		}
 
-		$classes = 'mfe-card' . ( $is_today ? ' mfe-card--today' : '' );
+		$detail   = isset( $item['detail'] ) ? $item['detail'] : '';
+		$poster   = isset( $item['poster'] ) ? $item['poster'] : '';
+		$links    = isset( $item['links'] ) && is_array( $item['links'] ) ? $item['links'] : array();
+		$has_more = ( '' !== $detail || '' !== $poster || ! empty( $links ) );
 
-		$html  = '<div class="' . esc_attr( $classes ) . '" data-type="' . esc_attr( $item['type'] ) . '">';
+		$classes  = 'mfe-card' . ( $is_today ? ' mfe-card--today' : '' ) . ( $has_more ? ' has-detail' : '' );
+		$interact = $has_more ? ' tabindex="0" role="button" aria-haspopup="dialog"' : '';
+
+		$html  = '<div class="' . esc_attr( $classes ) . '" data-type="' . esc_attr( $item['type'] ) . '"' . $interact . '>';
 		$html .= '<div class="mfe-date"><span class="mfe-day">' . esc_html( $day ) . '</span><span class="mfe-mon">' . esc_html( $mon ) . '</span><span class="mfe-year">' . esc_html( $year ) . '</span></div>';
 		$html .= '<div class="mfe-body">';
 		$html .= '<h3 class="mfe-title">' . esc_html( $item['title'] ) . '</h3>';
@@ -715,7 +898,30 @@ class MF_Event {
 			$html .= '<span class="mfe-badge">' . esc_html__( 'Today', 'mf-event' ) . '</span>';
 		}
 		$html .= '<span class="mfe-when">' . esc_html( $meta ) . '</span>';
-		$html .= '</div></div></div>';
+		if ( $has_more ) {
+			$html .= '<span class="mfe-more">' . esc_html__( 'Details', 'mf-event' ) . '</span>';
+		}
+		$html .= '</div></div>';
+
+		if ( $has_more ) {
+			$html .= '<template class="mfe-detail-data">';
+			if ( '' !== $poster ) {
+				$html .= '<div class="mfe-poster">' . $poster . '</div>'; // get_the_post_thumbnail() returns safe markup
+			}
+			if ( '' !== $detail ) {
+				$html .= '<div class="mfe-detail-content">' . $detail . '</div>'; // already wp_kses_post()'d
+			}
+			if ( ! empty( $links ) ) {
+				$html .= '<div class="mfe-detail-links"><h4 class="mfe-detail-links__h">' . esc_html__( 'Related links', 'mf-event' ) . '</h4><ul>';
+				foreach ( $links as $lnk ) {
+					$html .= '<li><a href="' . esc_url( $lnk['url'] ) . '">' . esc_html( $lnk['label'] ) . '</a></li>';
+				}
+				$html .= '</ul></div>';
+			}
+			$html .= '</template>';
+		}
+
+		$html .= '</div>';
 		return $html;
 	}
 
