@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: MF Event 1.6.0\n"
+"Project-Id-Version: MF Event 1.7.0\n"
 "Report-Msgid-Bugs-To: mfdsgn@gmail.com\n"
-"POT-Creation-Date: 2026-06-21 02:37+0300\n"
-"PO-Revision-Date: 2026-06-21 02:40+0000\n"
+"POT-Creation-Date: 2026-06-21 02:58+0300\n"
+"PO-Revision-Date: 2026-06-21 03:00+0000\n"
 "Last-Translator: MF <mfdsgn@gmail.com>\n"
 "Language-Team: MF\n"
 "Language: nl_NL\n"
@@ -206,7 +206,7 @@ msgstr "Aangepaste URL"
 msgid "Label (optional)"
 msgstr "Label (optioneel)"
 
-#: mf-event.php:274 mf-event.php:569
+#: mf-event.php:274 mf-event.php:571
 msgid "Delete"
 msgstr "Verwijderen"
 
@@ -304,8 +304,8 @@ msgid "(setting)"
 msgstr "(instelling)"
 
 #: mf-event.php:520
-msgid "Override the display style for this one shortcode: <code>cards</code>, <code>editorial</code> or <code>timeline</code>. Leave empty to use the default chosen below."
-msgstr "Overschrijf de weergavestijl voor alleen deze shortcode: <code>cards</code>, <code>editorial</code> of <code>timeline</code>. Laat leeg om de hieronder gekozen standaard te gebruiken."
+msgid "Override the display style for this one shortcode: <code>classic</code>, <code>cards</code>, <code>grid</code>, <code>editorial</code> or <code>timeline</code>. Leave empty to use the default chosen below."
+msgstr "Overschrijf de weergavestijl voor alleen deze shortcode: <code>classic</code>, <code>cards</code>, <code>grid</code>, <code>editorial</code> of <code>timeline</code>. Laat leeg om de hieronder gekozen standaard te gebruiken."
 
 #: mf-event.php:523
 msgid "You can combine parameters, e.g. <code>[mf_event title=\"This Year\" months=\"12\" limit=\"10\"]</code>."
@@ -340,116 +340,135 @@ msgid "Choose how the event list looks on the front end. A single shortcode can 
 msgstr "Kies hoe de evenementenlijst er aan de voorkant uitziet. Eén shortcode kan dit overschrijven met de parameter style=\"…\"."
 
 #: mf-event.php:542
+msgid "Classic"
+msgstr "Klassiek"
+
+#: mf-event.php:542
+msgid "The original look: full-width rows with a neutral surface and a thin coloured accent stripe on the left."
+msgstr "De oorspronkelijke weergave: rijen over de volledige breedte met een neutraal vlak en een dunne gekleurde accentstreep links."
+
+#: mf-event.php:543
 msgid "Cards"
 msgstr "Kaarten"
 
-#: mf-event.php:542
+#: mf-event.php:543
 msgid "Coloured cards with a filled date tile and a soft type-colour wash. Warm and inviting."
 msgstr "Gekleurde kaarten met een gevulde datumtegel en een zachte waas van de typekleur. Warm en uitnodigend."
 
-#: mf-event.php:543
+#: mf-event.php:544
+msgid "Grid"
+msgstr "Raster"
+
+#: mf-event.php:544
+msgid "Soft pastel boxes, three per row, grouped by month, washed in the type colour with the date as a corner badge."
+msgstr "Zachte pastelvakken, drie per rij, gegroepeerd per maand, gewassen in de typekleur met de datum als hoekbadge."
+
+#: mf-event.php:545
 msgid "Editorial"
 msgstr "Redactioneel"
 
-#: mf-event.php:543
+#: mf-event.php:545
 msgid "Calm hairline rows grouped by month, with the type shown as a small label. Clean and premium."
 msgstr "Rustige rijen met dunne lijnen, gegroepeerd per maand, met het type als klein label. Strak en premium."
 
-#: mf-event.php:544
+#: mf-event.php:546
 msgid "Timeline"
 msgstr "Tijdlijn"
 
-#: mf-event.php:544
+#: mf-event.php:546
 msgid "A vertical line with a coloured dot per event, grouped by month. Calendar feel."
 msgstr "Een verticale lijn met een gekleurde stip per evenement, gegroepeerd per maand. Kalendergevoel."
 
-#: mf-event.php:561
+#: mf-event.php:563
 msgid "Event Types"
 msgstr "Evenementtypes"
 
-#: mf-event.php:562
+#: mf-event.php:564
 msgid "Each type has a colour used as the card’s accent. Add your own, rename them, or change colours. The <strong>slug</strong> is the value used in the <code>type=\"…\"</code> shortcode parameter; it’s generated automatically from the name for new types and can’t be edited afterwards (so existing events keep working)."
 msgstr "Elk type heeft een kleur die als accent van de kaart wordt gebruikt. Voeg eigen types toe, hernoem ze of wijzig kleuren. De <strong>slug</strong> is de waarde die wordt gebruikt in de shortcode-parameter <code>type=\"…\"</code>; deze wordt voor nieuwe types automatisch uit de naam gegenereerd en kan daarna niet meer worden bewerkt (zodat bestaande evenementen blijven werken)."
 
-#: mf-event.php:566
+#: mf-event.php:568
 msgid "Name"
 msgstr "Naam"
 
-#: mf-event.php:567
+#: mf-event.php:569
 msgid "Slug"
 msgstr "Slug"
 
-#: mf-event.php:568
+#: mf-event.php:570
 msgid "Colour"
 msgstr "Kleur"
 
-#: mf-event.php:583
+#: mf-event.php:585
 msgid "+ Add type"
 msgstr "+ Type toevoegen"
 
-#: mf-event.php:586
+#: mf-event.php:588
 msgid "Save settings"
 msgstr "Instellingen opslaan"
 
-#: mf-event.php:588
+#: mf-event.php:590
 msgid "Reset all types to the defaults? Custom types will be removed."
 msgstr "Alle types terugzetten naar standaard? Aangepaste types worden verwijderd."
 
-#: mf-event.php:588
+#: mf-event.php:590
 msgid "Reset to defaults"
 msgstr "Terugzetten naar standaard"
 
-#: mf-event.php:598
+#: mf-event.php:600
 msgid "e.g. Exam"
 msgstr "bijv. Examen"
 
-#: mf-event.php:599
+#: mf-event.php:601
 msgid "auto from name"
 msgstr "automatisch uit naam"
 
-#: mf-event.php:757
+#: mf-event.php:759
 msgid "Close"
 msgstr "Sluiten"
 
-#: mf-event.php:758 mf-event.php:975
+#: mf-event.php:760 mf-event.php:977
 msgid "Related links"
 msgstr "Gerelateerde links"
 
-#: mf-event.php:845 mf-event.php:955
+#: mf-event.php:847 mf-event.php:957
 msgid "Today"
 msgstr "Vandaag"
 
-#: mf-event.php:866
+#: mf-event.php:868
 msgid "No upcoming events."
 msgstr "Geen komende evenementen."
 
-#: mf-event.php:962
+#: mf-event.php:964
 msgid "Details"
 msgstr "Details"
 
-#: mf-event.php:1007
+#: mf-event.php:1009
 msgid "No events yet."
 msgstr "Nog geen evenementen."
 
-#: mf-event.php:1009
+#: mf-event.php:1011
 msgid "Load sample events"
 msgstr "Voorbeeldevenementen laden"
 
-#: mf-event.php:1010
+#: mf-event.php:1012
 msgid "to start from a ready-made academic-calendar set you can edit, or add your own."
 msgstr "om te beginnen met een kant-en-klare academische kalender die je kunt bewerken, of voeg je eigen toe."
 
-#: mf-event.php:1109
+#: mf-event.php:1111
 #, php-format
 msgid "Found %s event from the previous isabet-events plugin."
 msgid_plural "Found %s events from the previous isabet-events plugin."
 msgstr[0] "%s evenement gevonden van de vorige isabet-events-plugin."
 msgstr[1] "%s evenementen gevonden van de vorige isabet-events-plugin."
 
-#: mf-event.php:1113
+#: mf-event.php:1115
 msgid "Import them into MF Event"
 msgstr "Importeer ze in MF Event"
 
-#: mf-event.php:1114
+#: mf-event.php:1116
 msgid "— copies titles, dates and types. Runs once; no duplicates."
 msgstr "— kopieert titels, datums en types. Wordt één keer uitgevoerd; geen duplicaten."
+
+#~ msgid "Override the display style for this one shortcode: <code>cards</code>, <code>editorial</code> or <code>timeline</code>. Leave empty to use the default chosen below."
+#~ msgstr "Overschrijf de weergavestijl voor alleen deze shortcode: <code>cards</code>, <code>editorial</code> of <code>timeline</code>. Laat leeg om de hieronder gekozen standaard te gebruiken."

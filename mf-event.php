@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       MF Event
  * Description:       Agenda-style upcoming-events list via the [mf_event] shortcode. Recurring (annual) dates and year-specific dates (e.g. Hijri / religious days) you update each year. Inherits the active theme's typography. Custom event types with colours. Reusable on any site.
- * Version:           1.6.0
+ * Version:           1.7.0
  * Author:            MF
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -28,12 +28,12 @@ class MF_Event {
 	const PREFIX    = '_mfe_';
 	const OPT       = 'mfe_types';
 	const OPT_STYLE = 'mfe_style';
-	const VERSION   = '1.6.0';
+	const VERSION   = '1.7.0';
 	const TD        = 'mf-event';
 
-	/** Available front-end display styles (skins). slug => label key. */
+	/** Available front-end display styles (skins). */
 	public static function styles() {
-		return array( 'cards', 'editorial', 'timeline' );
+		return array( 'classic', 'cards', 'grid', 'editorial', 'timeline' );
 	}
 
 	/** Saved default display style, validated. */
@@ -517,7 +517,7 @@ class MF_Event {
 					<tr><td><code>today</code></td><td>yes</td><td><?php echo wp_kses_post( __( 'Show the highlighted “Today” boxes at the top for events happening today. Set to <code>no</code> to hide that section.', 'mf-event' ) ); ?></td><td><code>[mf_event today="no"]</code></td></tr>
 					<tr><td><code>title</code></td><td><?php esc_html_e( '(empty)', 'mf-event' ); ?></td><td><?php esc_html_e( 'Optional heading shown above the list.', 'mf-event' ); ?></td><td><code>[mf_event title="Academic Calendar"]</code></td></tr>
 					<tr><td><code>type</code></td><td><?php esc_html_e( '(all)', 'mf-event' ); ?></td><td><?php echo wp_kses_post( __( 'Show only one type, using its <em>slug</em> (see the Types table below). Leave empty to show all.', 'mf-event' ) ); ?></td><td><code>[mf_event type="religious"]</code></td></tr>
-					<tr><td><code>style</code></td><td><em><?php esc_html_e( '(setting)', 'mf-event' ); ?></em></td><td><?php echo wp_kses_post( __( 'Override the display style for this one shortcode: <code>cards</code>, <code>editorial</code> or <code>timeline</code>. Leave empty to use the default chosen below.', 'mf-event' ) ); ?></td><td><code>[mf_event style="timeline"]</code></td></tr>
+					<tr><td><code>style</code></td><td><em><?php esc_html_e( '(setting)', 'mf-event' ); ?></em></td><td><?php echo wp_kses_post( __( 'Override the display style for this one shortcode: <code>classic</code>, <code>cards</code>, <code>grid</code>, <code>editorial</code> or <code>timeline</code>. Leave empty to use the default chosen below.', 'mf-event' ) ); ?></td><td><code>[mf_event style="grid"]</code></td></tr>
 				</tbody>
 			</table>
 			<p style="color:#666"><?php echo wp_kses_post( __( 'You can combine parameters, e.g. <code>[mf_event title="This Year" months="12" limit="10"]</code>.', 'mf-event' ) ); ?></p>
@@ -539,7 +539,9 @@ class MF_Event {
 				<p style="max-width:920px;color:#444"><?php esc_html_e( 'Choose how the event list looks on the front end. A single shortcode can override this with the style="…" parameter.', 'mf-event' ); ?></p>
 				<?php
 				$style_meta = array(
+					'classic'   => array( __( 'Classic', 'mf-event' ), __( 'The original look: full-width rows with a neutral surface and a thin coloured accent stripe on the left.', 'mf-event' ) ),
 					'cards'     => array( __( 'Cards', 'mf-event' ), __( 'Coloured cards with a filled date tile and a soft type-colour wash. Warm and inviting.', 'mf-event' ) ),
+					'grid'      => array( __( 'Grid', 'mf-event' ), __( 'Soft pastel boxes, three per row, grouped by month, washed in the type colour with the date as a corner badge.', 'mf-event' ) ),
 					'editorial' => array( __( 'Editorial', 'mf-event' ), __( 'Calm hairline rows grouped by month, with the type shown as a small label. Clean and premium.', 'mf-event' ) ),
 					'timeline'  => array( __( 'Timeline', 'mf-event' ), __( 'A vertical line with a coloured dot per event, grouped by month. Calendar feel.', 'mf-event' ) ),
 				);
